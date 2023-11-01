@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ai-insect-inspection/static/css/main.bacf4a94.css",
+    "main.js": "/ai-insect-inspection/static/js/main.29eee6bc.js",
+    "index.html": "/ai-insect-inspection/index.html",
+    "main.bacf4a94.css.map": "/ai-insect-inspection/static/css/main.bacf4a94.css.map",
+    "main.29eee6bc.js.map": "/ai-insect-inspection/static/js/main.29eee6bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bacf4a94.css",
+    "static/js/main.29eee6bc.js"
+  ]
+}
