@@ -1,0 +1,26 @@
+@import "./variable.css";
+
+.navigate{
+    background-color: var(--secondColor);
+    display: flex;
+    width: 100%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.title{
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--mainColor);
+}
+
+.home__anchor{
+    text-decoration: none !important;
+    color: var(--mainColor);
+    position: absolute;
+    left: 5vh;
+}

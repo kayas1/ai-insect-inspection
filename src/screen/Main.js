@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import mainStyles from "../styles/Main.module.css";
 import componentsStyles from "../styles/components.module.css"
 import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 function Notification(){
     return(<Link to={`/notification`}>
@@ -11,11 +12,17 @@ function Notification(){
 
 function Main(){
     return (
-        <div><Link to={`/diagnosis`}>
-            <button>Insect Inspection</button></Link>
-            <Link to={`/community`}>
-            <button>Community</button></Link>
-            <video src={null}/>
+        <div className={componentsStyles.main__block}>
+            <div className={componentsStyles.main__btnsContainer}>
+            <Link className={componentsStyles.btnContainer} to={`/diagnosis`}>
+            <button className={componentsStyles.main__btn}>Insect Inspection</button></Link>
+            <Link className={componentsStyles.btnContainer} to={`/community`}>
+            <button className={componentsStyles.main__btn}>Community</button></Link>
+            <Link className={componentsStyles.btnContainer} to={`/`}>
+            <button className={componentsStyles.main__btn}>sample</button></Link>
+            </div>
+            <div className={componentsStyles.tutorial__vidContainer}>
+            <video controls className={componentsStyles.tutorial__vid} src={null}/></div>
         </div>
     );
 }
@@ -26,7 +33,7 @@ function Home(){
         <Header title="AI Inspection System"/>
         <Notification/>
         <Main/>
-        <div></div>
+        <Footer/>
     </div>)
 };
 

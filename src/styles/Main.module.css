@@ -1,7 +1,15 @@
+@import "./variable.css";
+
+
 body{
-    background-color: #9ecc65;
+    background-color: var(--mainColor);
 }
 
 .text__align{
     text-align: center;
 }
+
+a{
+    text-decoration: none;
+}
+

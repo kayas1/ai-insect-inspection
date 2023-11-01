@@ -1,11 +1,11 @@
 
 import { Link } from "react-router-dom";
-import componentsStyles from "../styles/components.module.css"
+import styles from "../styles/header.module.css"
 
 function Header({title}){
     return (
-    <div className={componentsStyles.navigate}><Link to={`/`}><span className={componentsStyles.home}>Home</span></Link>
-    <h1 className={componentsStyles.title}>{title}</h1>
+    <div className={styles.navigate}><Link className={styles.home__anchor} to={`/`}><i className="fa-solid fa-house fa-2xl"></i></Link>
+    <h1 className={styles.title}>{title}</h1>
     </div>
     );
 };
