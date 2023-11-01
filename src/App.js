@@ -12,7 +12,7 @@ function App() {
       <Route path="/notificaiton" element={<NotificationScreen/>}/>
       <Route path="/result" element={<ResultScreen/>}/>
       <Route path="/diagnosis" element={<DiagnosisScreen/>}/>
-      <Route path="/cummunity" element={<CommunityScreen/>}/>
+      <Route path="/community" element={<CommunityScreen/>}/>
     </Routes>
     </Router>;
 }

@@ -5,7 +5,7 @@ import Header from "../component/Header";
 
 function Notification(){
     return(<Link to={`/notification`}>
-        <h1>Notification</h1></Link>
+        <h1 className={mainStyles.text__align}>Notification</h1></Link>
     );
 };
 

@@ -1,10 +1,5 @@
+import Header from "../component/Header";
 
-
-function Header(){
-    return(
-        <div>Community</div>
-    );
-}
 
 function CommunityObject(){
     return(
@@ -26,7 +21,7 @@ function CommunityList(){
 function CommunityScreen(){
     return(
         <div>
-            <Header/>
+            <Header title="Community"/>
         </div>
     );
 };
