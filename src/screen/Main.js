@@ -4,12 +4,6 @@ import componentsStyles from "../styles/components.module.css"
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 
-function Notification(){
-    return(<Link to={`/notification`}>
-        <h1 className={mainStyles.text__align}>Notification</h1></Link>
-    );
-};
-
 function Main(){
     return (
         <div className={componentsStyles.main__block}>
@@ -31,7 +25,6 @@ function Home(){
     return (
     <div>
         <Header title="AI Inspection System"/>
-        <Notification/>
         <Main/>
         <Footer/>
     </div>)

@@ -4,6 +4,8 @@ import ResultScreen from "./screen/Result.js";
 import DiagnosisScreen from "./screen/Diagnosis.js";
 import CommunityScreen from "./screen/Community.js";
 import NotificationScreen from "./screen/Notification.js";
+import InsectInfo from "./screen/InsecInfo.js";
+import InsectCM from "./screen/InsectCM.js";
 
 function App() {
   return <Router>
@@ -13,6 +15,8 @@ function App() {
       <Route path="/result" element={<ResultScreen/>}/>
       <Route path="/diagnosis" element={<DiagnosisScreen/>}/>
       <Route path="/community" element={<CommunityScreen/>}/>
+      <Route path="/insectinfo" element={<InsectInfo/>}/>
+      <Route path="/insectcm" element={<InsectCM/>}/>
     </Routes>
     </Router>;
 }
