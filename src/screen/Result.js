@@ -1,33 +1,18 @@
+import Footer from "../component/Footer";
+import Header from "../component/Header";
+import styles from "../styles/result.module.css";
+import resultImg from "../tempFile/Helicoverpa_assulta_byNCPMS.JPG";
+import resultChart from "../tempFile/result.jpg";
 
-
-function Header(){
-    return (
-        <h1>Result</h1>
-    );
-};
-
-function Name(){
-    return (
-        <div>
-            <span>검거세미나방</span>
-            <span>92%</span>
-        </div>
-    );
-};
-
-function Images(){
-    return (
-        <div>
-            <img src={null}/>
-            <img src={null}/>
-        </div>
-    );
-};
-
-function MoreInformation(){
+function MainBlock(){
     return(
-        <div>
-            <button>more Information</button>
+        <div className={styles.mainContainer}>
+            <img className={styles.resultImg} src={resultImg} alt=""/>
+            <img className={styles.resultImg} src={resultChart} alt=""/>
+            <div className={styles.btnsContainer}>
+            <button className={styles.moreInfoBtn}>Information about insect</button>
+            <button className={styles.moreInfoBtn}>Insect control method</button>
+            </div>
         </div>
     );
 };
@@ -35,10 +20,9 @@ function MoreInformation(){
 function ResultScreen(){
     return(
         <div>
-            <Header/>
-            <Name/>
-            <Images/>
-            <MoreInformation/>
+            <Header title="Moss : 92%"/>
+            <MainBlock/>
+            <Footer/>
         </div>
     );
 };

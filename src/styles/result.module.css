@@ -1,0 +1,36 @@
+@import "./variable.css";
+
+.mainContainer{
+    margin-top: 27vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.result__name{
+    font-size: 60px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.resultImg{
+    height: 400px;
+    width: 400px;
+}
+
+.btnsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.moreInfoBtn{
+    background-color: var(--secondColor) ;
+    color:var(--mainColor);
+    font-weight: 550;
+    border: none;
+    border-radius: 15px;
+    width: 380px;
+    height: 100px;
+    margin: 30px 0;
+    font-size: 40px;
+}

@@ -19,7 +19,7 @@ function Main(){
             <Link className={componentsStyles.btnContainer} to={`/community`}>
             <button className={componentsStyles.main__btn}>Community</button></Link>
             <Link className={componentsStyles.btnContainer} to={`/`}>
-            <button className={componentsStyles.main__btn}>sample</button></Link>
+            <button className={componentsStyles.main__btn}>Insect around me</button></Link>
             </div>
             <div className={componentsStyles.tutorial__vidContainer}>
             <video controls className={componentsStyles.tutorial__vid} src={null}/></div>
