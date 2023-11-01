@@ -1,0 +1,16 @@
+.navigate{
+    background-color: #fff8e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.home{
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+}
+.title{
+    font-size: 48px;
+    font-weight: 600;
+}
