@@ -12,10 +12,10 @@ function MainBlock(){
             <img className={styles.resultImg} src={resultImg} alt=""/>
             <img className={styles.resultImg} src={resultChart} alt=""/>
             <div className={styles.btnsContainer}><Link to="/insectinfo">
-            <button className={styles.moreInfoBtn}>Information about insect</button>
+            <button className={styles.moreInfoBtn}>해충 상세 정보</button>
             </Link>
             <Link to="/insectcm">
-            <button className={styles.moreInfoBtn}>Insect control method</button>
+            <button className={styles.moreInfoBtn}>해충 방제법</button>
             </Link>
             </div>
         </div>
@@ -25,7 +25,7 @@ function MainBlock(){
 function ResultScreen(){
     return(
         <div>
-            <Header title="Moss : 92%"/>
+            <Header title="검거세미나방 : 92%"/>
             <MainBlock/>
             <Footer/>
         </div>

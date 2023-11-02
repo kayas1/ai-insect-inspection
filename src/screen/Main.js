@@ -9,11 +9,11 @@ function Main(){
         <div className={componentsStyles.main__block}>
             <div className={componentsStyles.main__btnsContainer}>
             <Link className={componentsStyles.btnContainer} to={`/diagnosis`}>
-            <button className={componentsStyles.main__btn}>Insect Inspection</button></Link>
+            <button className={componentsStyles.main__btn}>해충 진단</button></Link>
             <Link className={componentsStyles.btnContainer} to={`/community`}>
-            <button className={componentsStyles.main__btn}>Community</button></Link>
+            <button className={componentsStyles.main__btn}>커뮤니티</button></Link>
             <Link className={componentsStyles.btnContainer} to={`/`}>
-            <button className={componentsStyles.main__btn}>Insect around me</button></Link>
+            <button className={componentsStyles.main__btn}>내 주변 해충 정보</button></Link>
             </div>
             <div className={componentsStyles.tutorial__vidContainer}>
             <video controls className={componentsStyles.tutorial__vid} src={null}/></div>
@@ -24,7 +24,7 @@ function Main(){
 function Home(){
     return (
     <div>
-        <Header title="AI Inspection System"/>
+        <Header title="AI 해충 진단 시스템"/>
         <Main/>
         <Footer/>
     </div>)

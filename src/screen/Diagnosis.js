@@ -9,15 +9,6 @@ function handleSubmit(event){
 function SubmitForm(){
     return <form className={styles.submitForm}>
         <div className={styles.selectContainer}>
-        <label className={styles.selectLabel} for="id">crop</label>
-        <select className={styles.submitSelect} id="kind">
-            <option value={0}>chili</option>
-            <option value={1}>rice</option>
-            <option value={2}>°¨ÀÚ</option>
-            <option value={3}>Äá</option>
-            <option value={4}>ÆÄ</option>
-            <option value={5}>¹èÃß</option>
-        </select>
         </div>
         <input className={styles.submitFile} type="file" accept="image/jpeg"></input>
         <input className={styles.submitBtn} type="submit" onClick={handleSubmit}></input>
@@ -26,7 +17,7 @@ function SubmitForm(){
 
 function DiagnosisScreen(){
     return <div>
-        <Header title="Select the kind of crop and image!"/>
+        <Header title="ì´ë¯¸ì§€ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”!"/>
         <SubmitForm/>
         <Footer/>
     </div>;
