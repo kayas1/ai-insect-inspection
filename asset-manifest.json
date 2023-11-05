@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/ai-insect-inspection/static/css/main.bacf4a94.css",
-    "main.js": "/ai-insect-inspection/static/js/main.29eee6bc.js",
+    "main.css": "/ai-insect-inspection/static/css/main.cc775a5f.css",
+    "main.js": "/ai-insect-inspection/static/js/main.c8753aae.js",
+    "static/media/Helicoverpa_assulta_byNCPMS.JPG": "/ai-insect-inspection/static/media/Helicoverpa_assulta_byNCPMS.627ebe0e40b15759c3c7.JPG",
+    "static/media/result.jpg": "/ai-insect-inspection/static/media/result.cbb6a8a66b6d60398cd6.jpg",
     "index.html": "/ai-insect-inspection/index.html",
-    "main.bacf4a94.css.map": "/ai-insect-inspection/static/css/main.bacf4a94.css.map",
-    "main.29eee6bc.js.map": "/ai-insect-inspection/static/js/main.29eee6bc.js.map"
+    "main.cc775a5f.css.map": "/ai-insect-inspection/static/css/main.cc775a5f.css.map",
+    "main.c8753aae.js.map": "/ai-insect-inspection/static/js/main.c8753aae.js.map"
   },
   "entrypoints": [
-    "static/css/main.bacf4a94.css",
-    "static/js/main.29eee6bc.js"
+    "static/css/main.cc775a5f.css",
+    "static/js/main.c8753aae.js"
   ]
 }
