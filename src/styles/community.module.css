@@ -1,38 +1,37 @@
 @import "./variable.css";
 
-.communityContainer{
-    margin-top: 25vh;
-    margin-left: 12vw;
-    width: 70%;
+.communityContainer {
+  margin-top: 25vh;
+  margin-left: 12vw;
+  width: 70%;
 }
 
-.communityListItem{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 28px;
-    font-weight: 600;
-    margin: 20px;
-    color: var(--secondColor);
+.communityListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 20px;
+  color: black;
 }
-.postBtnContainer{
-    position: absolute;
-    right: 5vw;
-    top: 3vh;
-    height: 15vh;
-    width: 10vw;
+.postBtnContainer {
+  position: absolute;
+  right: 5vw;
+  top: 3vh;
+  height: 15vh;
+  width: 10vw;
 }
-.postBtn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 160px;
-    height: 60px;
-    font-size: 32px;
-    background-color: var(--mainColor);
-    color: var(--secondColor);
-    border: none;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
-
+.postBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 60px;
+  font-size: 32px;
+  background-color: var(--mainColor);
+  color: var(--secondColor);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }

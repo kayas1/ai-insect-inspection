@@ -1,0 +1,7 @@
+@import "./variable.css";
+
+.main__block {
+  padding: 20vh 10vw;
+  font-size: 20px;
+  font-weight: 550;
+}

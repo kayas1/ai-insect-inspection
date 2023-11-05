@@ -1,0 +1,34 @@
+@import "./variable.css";
+
+.main__container img {
+  width: 80%;
+  height: 60%;
+  margin: 20px;
+}
+
+.element__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__container {
+  width: 100%;
+  margin: 20vh 0;
+  display: flex;
+}
+
+.element__imgBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img__name {
+  text-align: center;
+}
+.imgs__container {
+  width: 30%;
+  height: 100%;
+}
+.main__information {
+  font-size: 20px;
+}

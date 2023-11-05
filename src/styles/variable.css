@@ -1,4 +1,6 @@
 :root{
-    --mainColor:#fff8e6;
-    --secondColor:#9ecc65;
+    --mainColor:black;
+    --secondColor:white;
+    --skyBlue:#ecf2ff;
+    --borderOption:1px solid rgba(0,0,0,0.1);
 }
