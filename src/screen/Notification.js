@@ -1,21 +1,22 @@
 import Header from "../component/Header";
+import "../styles/styles.css";
 
-function Context(){
-    return(
-        <div>
-            <h3>title</h3>
-            <p>asdklfjwekjhlfkjsahlkfh</p>
-        </div>
-    );
-};
+function Context() {
+  return (
+    <div>
+      <h3>title</h3>
+      <p>asdklfjwekjhlfkjsahlkfh</p>
+    </div>
+  );
+}
 
-function NotificationScreen(){
-    return (
-        <div>
-            <Header title="ÀÛ¹°ÀÇ Á¾·ù¿Í ÀÌ¹ÌÁö¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä!"/>
-            <Context/>
-        </div>
-    );
-};
+function NotificationScreen() {
+  return (
+    <div>
+      <Header title="ï¿½Û¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½!" />
+      <Context />
+    </div>
+  );
+}
 
 export default NotificationScreen;

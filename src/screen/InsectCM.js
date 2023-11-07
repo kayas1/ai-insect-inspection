@@ -1,5 +1,6 @@
 import Footer from "../component/Footer";
 import Header from "../component/Header";
+import "../styles/styles.css";
 import styles from "../styles/insectCM.module.css";
 
 function MainBlock() {

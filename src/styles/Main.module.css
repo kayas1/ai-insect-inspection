@@ -1,15 +1,88 @@
 @import "./variable.css";
 
-
-body{
-    background-color: var(--mainColor);
-}
-
-.text__align{
-    text-align: center;
-}
-
-a{
+@media screen and (max-width: 767px) {
+  .main__btn {
+    font-size: 18px;
+  }
+  .tutorial__vid {
+    height: 30vh;
+    width: 45vh;
+  }
+  .main__block {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 70vh;
+  }
+  .main__btnsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 30vh;
+  }
+  .anchor__conatiner {
+    width: 80%;
+    height: 40%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
+  }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main__btn {
+    font-size: 28px;
+  }
+  .tutorial__vid {
+    height: 40vh;
+    width: 60vh;
+  }
+  .main__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  .main__btnsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+  }
+  .anchor__conatiner {
+    width: 40%;
+    height: 12vh;
+    margin: 10px 0;
+  }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+.main__btn {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondColor);
+  color: var(--mainColor);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
+.tutorial__vidContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

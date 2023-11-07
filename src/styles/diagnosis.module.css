@@ -1,49 +1,37 @@
 @import "./variable.css";
 
-body{
-    font-family: 'Nanum Gothic', sans-serif;
-}
-
-.submitForm{
-    margin-top: 15vh;
-    display: flex;
-    height: 70vh;
-    justify-content: center;
-    align-items: center;
-}
-.selectContainer{
-    display: flex;
+@media screen and (max-width: 767px) {
+  .submitForm {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.selectLabel{
-    font-size: 36px;
-    font-weight: 550;
-    padding-bottom: 5px;
-}
-
-.submitSelect{
+  }
+  .submitFile {
+    font-size: 20px;
+    margin-bottom: 4vh;
+  }
+  .submitBtn {
     height: 40px;
-    width: 150px;
-    font-size: 36px;
-    border-radius: 5px;
-    margin-right: 10px;
+    width: 80px;
+    font-size: 20px;
+  }
 }
-
-.submitFile{
+@media screen and (min-width: 768px) {
+  .submitFile {
     font-size: 36px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    padding-left: 60px;
-}
+  }
 
-.submitBtn{
+  .submitBtn {
     height: 80px;
     width: 160px;
-    background-color:white;
-    border-radius: 5px;
     font-size: 24px;
+  }
+}
+.submitForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.submitBtn {
+  background-color: white;
+  border-radius: 5px;
 }

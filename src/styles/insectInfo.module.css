@@ -1,20 +1,34 @@
 @import "./variable.css";
 
-.main__container img {
+@media screen and (max-width: 767px) {
+  .main__information p {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .imgs__container {
+    width: 40vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main__information p {
+    line-height: 1.8;
+    font-size: 22px;
+  }
+  .imgs__container {
+    width: 30vw;
+  }
+}
+
+.element__imgBlock img {
   width: 80%;
   height: 60%;
   margin: 20px;
 }
 
-.element__container {
-  display: flex;
-  flex-direction: column;
-}
-
 .main__container {
   width: 100%;
-  margin: 20vh 0;
   display: flex;
+  padding: 2vh 0;
 }
 
 .element__imgBlock {
@@ -24,11 +38,11 @@
 }
 .img__name {
   text-align: center;
-}
-.imgs__container {
-  width: 30%;
-  height: 100%;
+  font-size: 24px;
+  font-weight: 550;
 }
 .main__information {
-  font-size: 20px;
+  font-weight: 500;
+  padding-top: 2vh;
+  width: 70vw;
 }
