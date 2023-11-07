@@ -19,7 +19,7 @@ function Main() {
           </Link>
         </div>
         <div className={styles.btnContainer}>
-          <Link className={styles.anchor__conatiner} to={`/`}>
+          <Link className={styles.anchor__conatiner} to={`/insectaroundme`}>
             <button className={styles.main__btn}>내 주변 해충 정보</button>
           </Link>
         </div>

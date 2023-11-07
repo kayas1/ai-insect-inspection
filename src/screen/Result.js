@@ -4,7 +4,7 @@ import "../styles/styles.css";
 import styles from "../styles/result.module.css";
 import resultImg from "../tempFile/Helicoverpa_assulta_byNCPMS.JPG";
 import { Link } from "react-router-dom";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
 class Donut extends Component {

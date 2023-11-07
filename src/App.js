@@ -6,6 +6,7 @@ import CommunityScreen from "./screen/Community.js";
 import NotificationScreen from "./screen/Notification.js";
 import InsectInfo from "./screen/InsecInfo.js";
 import InsectCM from "./screen/InsectCM.js";
+import InsectAroundMe from "./screen/InsectAroundMe.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/community" element={<CommunityScreen />} />
         <Route path="/insectinfo" element={<InsectInfo />} />
         <Route path="/insectcm" element={<InsectCM />} />
+        <Route path="/insectaroundme" element={<InsectAroundMe />} />
       </Routes>
     </Router>
   );

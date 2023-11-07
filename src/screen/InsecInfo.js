@@ -9,15 +9,15 @@ function MainBlock() {
     <div className={styles.main__container}>
       <div className={styles.imgs__container}>
         <div className={styles.element__imgBlock}>
-          <img src={imgUrl} />
+          <img src={imgUrl} alt="" />
           <h3 className={styles.img__name}>알</h3>
         </div>
         <div className={styles.element__imgBlock}>
-          <img src={imgUrl} />
+          <img src={imgUrl} alt="" />
           <h3 className={styles.img__name}>유충</h3>
         </div>
         <div className={styles.element__imgBlock}>
-          <img src={imgUrl} />
+          <img src={imgUrl} alt="" />
           <h3 className={styles.img__name}>성충</h3>
         </div>
       </div>
