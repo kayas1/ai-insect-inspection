@@ -7,10 +7,8 @@ import NotificationScreen from "./screen/Notification.js";
 import InsectInfo from "./screen/InsecInfo.js";
 import InsectCM from "./screen/InsectCM.js";
 import InsectAroundMe from "./screen/InsectAroundMe.js";
-import config from "dotenv";
 
 function App() {
-  config();
   return (
     <Router>
       <Routes>
