@@ -17,6 +17,7 @@ function Map() {
       lat = position.coords.latitude;
       lng = position.coords.longitude;
     }, alert("권한을 허락해주십시오"));
+    console.log(process.env.MAP_CLIENT_ID);
     return (
       <NaverMap defaultCenter={new navermaps.LatLng(lat, lng)} defaultZoom={15}>
         <Marker position={new navermaps.LatLng(lat, lng)} />
@@ -26,7 +27,7 @@ function Map() {
   return (
     <div className="map-loader">
       <div className="map">
-        <NavermapsProvider ncpClientId={process.env.MAPCLIENTID}>
+        <NavermapsProvider ncpClientId={process.env.MAP_CLIENT_ID}>
           <MapDiv
             style={{
               width: "100%",
