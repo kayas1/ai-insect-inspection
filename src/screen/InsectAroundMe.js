@@ -9,28 +9,30 @@ import {
   useNavermaps,
 } from "react-naver-maps";
 import { useState } from "react";
+import { useEffect } from "react";
 
-function Map() {
-  const apikey = process.env.REACT_APP_MAP_CLIENT_ID;
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
-  function MyMap() {
-    const navermaps = useNavermaps();
+function MyMap() {
+  const [lat, setLat] = useState(37.5);
+  const [lng, setLng] = useState(127.07);
+  const navermaps = useNavermaps();
+  useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLat(position.coords.latitude);
       setLng(position.coords.longitude);
       console.log(lat, " ", lng);
-    }, alert("권한을 허락해주십시오"));
-    return (
-      <NaverMap defaultCenter={new navermaps.LatLng(lat, lng)} defaultZoom={15}>
-        <Marker
-          position={new navermaps.LatLng(lat, lng)}
-          onClick={() => console.log("asdf")}
-        />
-        <Marker position={new navermaps.LatLng(37.55, 127.07)} />
-      </NaverMap>
-    );
-  }
+    }, console.log("adsf"));
+  });
+
+  return (
+    <NaverMap defaultCenter={new navermaps.LatLng(lat, lng)} defaultZoom={15}>
+      <Marker position={new navermaps.LatLng(lat, lng)} />
+      <Marker position={new navermaps.LatLng(37.55, 127.07)} />
+    </NaverMap>
+  );
+}
+function Map() {
+  const apikey = process.env.REACT_APP_MAP_CLIENT_ID;
+
   return (
     <div className={styles.map__loader}>
       <div className="map">
