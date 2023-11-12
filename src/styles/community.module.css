@@ -1,26 +1,50 @@
 @import "./variable.css";
 
 @media screen and (max-width: 767px) {
+  .communityContainer {
+    height: 80vh;
+    padding-left: 4vw;
+    width: 70vw;
+  }
+  .communityListItem {
+    width: 100%;
+    font-size: 20px;
+  }
+  .list__div {
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 @media screen and (min-width: 768px) {
-}
-.communityContainer {
-  margin-left: 12vw;
-  width: 70%;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-}
+  .communityContainer {
+    padding-left: 8vw;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
 
-.communityListItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 28px;
-  font-weight: 600;
-  margin: 20px;
-  color: black;
+  .communityListItem {
+    height: 7vh;
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+  }
+  .communityListItem a {
+    text-decoration: none;
+    color: black;
+  }
+  .list__div {
+    height: 7vh;
+  }
 }
 .postBtnContainer {
   position: absolute;
@@ -29,6 +53,10 @@
   height: 15vh;
   width: 10vw;
 }
+.postBtnContainer a {
+  text-decoration: none;
+}
+
 .postBtn {
   display: flex;
   align-items: center;

@@ -1,5 +1,8 @@
 @import "./variable.css";
 @media screen and (max-width: 767px) {
+  .map__loader {
+    height: 80vh !important;
+  }
 }
 @media screen and (min-width: 768px) {
 }

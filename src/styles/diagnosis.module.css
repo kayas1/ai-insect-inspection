@@ -3,6 +3,7 @@
 @media screen and (max-width: 767px) {
   .submitForm {
     flex-direction: column;
+    height: 80vh !important;
   }
   .submitFile {
     font-size: 20px;
@@ -34,4 +35,11 @@
 .submitBtn {
   background-color: white;
   border-radius: 5px;
+}
+
+.cameraBtn {
+  height: 5vh;
+  width: 10vw;
+  font-size: 30px;
+  font-weight: 550;
 }

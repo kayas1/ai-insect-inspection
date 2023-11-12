@@ -7,6 +7,8 @@ import NotificationScreen from "./screen/Notification.js";
 import InsectInfo from "./screen/InsecInfo.js";
 import InsectCM from "./screen/InsectCM.js";
 import InsectAroundMe from "./screen/InsectAroundMe.js";
+import Community_post_form from "./screen/Community_post_form.js";
+import Community_context from "./screen/Community_context.js";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/result" element={<ResultScreen />} />
         <Route path="/diagnosis" element={<DiagnosisScreen />} />
         <Route path="/community" element={<CommunityScreen />} />
+        <Route path="/community-post-form" element={<Community_post_form />} />
+        <Route path="/community/:id" element={<Community_context />} />
         <Route path="/insectinfo" element={<InsectInfo />} />
         <Route path="/insectcm" element={<InsectCM />} />
         <Route path="/insectaroundme" element={<InsectAroundMe />} />

@@ -40,7 +40,7 @@ function Map() {
           <MapDiv
             style={{
               width: "100%",
-              height: "70vh",
+              height: window.innerWidth < 768 ? "80vh" : "70vh",
             }}
           >
             <MyMap />

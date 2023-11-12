@@ -6,6 +6,9 @@
   .footer__btn {
     font-size: 18px;
   }
+  .footerContainer {
+    height: 10vh !important;
+  }
 }
 @media screen and (min-width: 768px) {
   .number {

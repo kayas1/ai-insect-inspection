@@ -44,9 +44,9 @@ class Donut extends Component {
           type="donut"
           width={
             window.innerWidth < 768
-              ? "400"
-              : window.innerWidth < 1280
               ? "450"
+              : window.innerWidth < 1280
+              ? "525"
               : "600"
           }
         />
@@ -61,7 +61,9 @@ function MainBlock() {
       <div className={styles.imgContainer}>
         <img className={styles.resultImg} src={resultImg} alt="" />
       </div>
-      <Donut width="600" className={styles.chart} />
+      <div className={styles.chartDiv}>
+        <Donut width="600" className={styles.chart} />
+      </div>
       <div className={styles.btnsContainer}>
         <Link to="/insectinfo">
           <button className={styles.moreInfoBtn}>해충 상세 정보</button>

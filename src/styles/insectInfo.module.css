@@ -2,11 +2,11 @@
 
 @media screen and (max-width: 767px) {
   .main__information p {
-    line-height: 1.6;
-    font-size: 16px;
+    line-height: 1.7;
+    font-size: 18px;
   }
   .imgs__container {
-    width: 40vw;
+    width: 45vw;
   }
 }
 @media screen and (min-width: 768px) {

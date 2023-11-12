@@ -7,6 +7,9 @@
   .back__anchor {
     font-size: 16px;
   }
+  .navigate {
+    height: 10vh !important;
+  }
 }
 @media screen and (min-width: 768px) {
   .title {
