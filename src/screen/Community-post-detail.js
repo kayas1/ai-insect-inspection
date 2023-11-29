@@ -3,22 +3,22 @@ import Header from "../component/Header";
 import styles from "../styles/community-context.module.css";
 
 function Title() {
-  document.getElementById("edit").addEventListener("click", (e) => {
-    e.preventDefault();
-    document.getElementById("buttonForm").setAttribute("method", "GET");
-    document
-      .getElementById("buttonForm")
-      .setAttribute("action", `/community_post/edit/${Community_post.id}|`);
-    document.getElementById("buttonForm").submit();
-  });
-  document.getElementById("delete").addEventListener("click", (e) => {
-    e.preventDefault();
-    document.getElementById("buttonForm").setAttribute("method", "POST");
-    document
-      .getElementById("buttonForm")
-      .setAttribute("action", `/community_post/delete/${Community_post.id}`);
-    document.getElementById("buttonForm").submit();
-  });
+  // document.getElementById("edit").addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   document.getElementById("buttonForm").setAttribute("method", "GET");
+  //   document
+  //     .getElementById("buttonForm")
+  //     .setAttribute("action", `/community_post/edit/${Community_post.id}|`);
+  //   document.getElementById("buttonForm").submit();
+  // });
+  // document.getElementById("delete").addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   document.getElementById("buttonForm").setAttribute("method", "POST");
+  //   document
+  //     .getElementById("buttonForm")
+  //     .setAttribute("action", `/community_post/delete/${Community_post.id}`);
+  //   document.getElementById("buttonForm").submit();
+  // });
   return (
     <div className={styles.titleContainer}>
       <div className={styles.titleDiv}>

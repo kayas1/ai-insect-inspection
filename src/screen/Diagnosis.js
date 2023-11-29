@@ -15,6 +15,7 @@ function handleSubmit(event) {
 function SubmitForm() {
   const [isHidden, setIsHidden] = useState(false);
   const [changeCamera, setChangeCamera] = useState(false);
+  const [CurrentPosition, setCurrentPosition] = useState(null);
   const CameraComponent = () => {
     const videoRef = useRef(null);
     const startCamera = (e) => {
@@ -37,6 +38,23 @@ function SubmitForm() {
         videoRef.current.srcObject = null;
       }
     }, [changeCamera]);
+    useEffect(
+      () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            setCurrentPosition([
+              position.coords.latitude,
+              position.coords.longitude,
+            ]);
+          });
+        }
+      },
+      () => {
+        alert(
+          "위치 확인을 거절하셔도 서비스 사용에는 지장이 없지만 다른 사용자가 해충 발생 현황을 확인하게 될 수 없습니다."
+        );
+      }
+    );
 
     const capturePhoto = (e) => {
       e.preventDefault();
@@ -90,7 +108,7 @@ function SubmitForm() {
 
   return (
     <div className={styles.mainContainer}>
-      <form className={styles.submitForm}>
+      <form className={styles.submitForm} method="POST" action="">
         {changeCamera ? null : (
           <div className={styles.explainContainer}>
             <h1>
@@ -115,8 +133,8 @@ function SubmitForm() {
         {isHidden ? null : (
           <div className={styles.selectContainer}>
             <div>
-              <label htmlFor="agricultureValue">작물 종류 </label>
-              <select id="agricultureValue" name="kindOf">
+              <label htmlFor="agricultureType">작물 종류 </label>
+              <select id="agricultureType" name="agricultureType">
                 <option value={0}>감자</option>
                 <option value={1}>고추</option>
                 <option value={2}>배추</option>

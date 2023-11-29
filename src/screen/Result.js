@@ -4,7 +4,7 @@ import "../styles/styles.css";
 import styles from "../styles/result.module.css";
 import resultImg from "../tempFile/Helicoverpa_assulta_byNCPMS.JPG";
 import { Link } from "react-router-dom";
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
 class Donut extends Component {
@@ -62,6 +62,34 @@ class Donut extends Component {
 }
 
 function MainBlock() {
+  const [resultData, setResultData] = useState({
+    label1: "검거세미밤나방",
+    label2: "담배거세미나방",
+    label3: "담배나방",
+    label4: "도둑나방",
+    label5: "기타",
+    percent1: 92.5,
+    percent2: 3,
+    percent3: 2.5,
+    percent4: 1,
+    percent5: 1,
+  });
+  useEffect(() => {
+    setResultData({
+      label1: "기타",
+      label2: "담배거세미나방",
+      label3: "담배나방",
+      label4: "도둑나방",
+      label5: "기타",
+      percent1: 92.5,
+      percent2: 3,
+      percent3: 2.5,
+      percent4: 1,
+      percent5: 1,
+    });
+    console.log(resultData);
+  }, [resultData]);
+  console.log(resultData);
   return (
     <div className={styles.mainContainer}>
       <div className={styles.imgContainer}>
@@ -72,16 +100,16 @@ function MainBlock() {
         <Donut
           width="600"
           className={styles.chart}
-          label1="검거세미밤나방"
-          label2="담배거세미나방"
-          label3="담배나방"
-          label4="도둑나방"
-          label5="기타"
-          percent1="92.5"
-          percent2="3"
-          percent3="2.5"
-          percent4="1"
-          percent5="1"
+          label1={resultData.label1}
+          label2={resultData.label2}
+          label3={resultData.label3}
+          label4={resultData.label4}
+          label5={resultData.label5}
+          percent1={resultData.percent1}
+          percent2={resultData.percent2}
+          percent3={resultData.percent3}
+          percent4={resultData.percent4}
+          percent5={resultData.percent5}
         />
       </div>
       <div className={styles.btnsContainer}>
