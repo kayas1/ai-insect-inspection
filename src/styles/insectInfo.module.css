@@ -1,34 +1,84 @@
 @import "./variable.css";
 
 @media screen and (max-width: 767px) {
+  .main__container {
+    flex-direction: column;
+  }
   .main__information p {
     line-height: 1.7;
     font-size: 18px;
   }
   .imgs__container {
-    width: 45vw;
+    width: 90vw;
+    height: 45vh;
+  }
+  .element__imgBlock {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .element__imgBlock img {
+    width: 90%;
+    height: 35vh;
+    border-radius: 10px;
+  }
+  .btnsContainer {
+    height: 5vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5vw;
+  }
+  .btnsContainer button {
+    width: 20%;
+    height: 5vh;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  .main__information {
+    width: 100%;
+    padding: 2vw;
   }
 }
 @media screen and (min-width: 768px) {
+  .main__information {
+    width: 70vw;
+  }
   .main__information p {
     line-height: 1.8;
     font-size: 22px;
+    padding-right: 3vw;
   }
   .imgs__container {
-    width: 30vw;
+    width: 35vw;
   }
-}
-
-.element__imgBlock img {
-  width: 80%;
-  height: 60%;
-  margin: 20px;
+  .btnsContainer button {
+    width: 5vw;
+    height: 5vh;
+    font-size: 28px;
+    font-weight: 550;
+    border-radius: 10px;
+  }
+  .btnsContainer {
+    box-sizing: border-box;
+    padding: 0 3vw;
+  }
+  .main__container {
+    height: 70vh;
+  }
+  .element__imgBlock img {
+    width: 80%;
+    height: 50vh;
+    margin: 3vh;
+    border-radius: 10px;
+  }
 }
 
 .main__container {
   width: 100%;
   display: flex;
-  padding: 2vh 0;
 }
 
 .element__imgBlock {
@@ -36,13 +86,16 @@
   flex-direction: column;
   align-items: center;
 }
-.img__name {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 550;
-}
 .main__information {
   font-weight: 500;
   padding-top: 2vh;
-  width: 70vw;
+  box-sizing: border-box;
+}
+.btnsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnsContainer button {
+  background-color: white;
 }

@@ -2,7 +2,9 @@
 
 @media screen and (max-width: 767px) {
   .title {
-    font-size: 30px;
+    font-size: 26px;
+    white-space: pre-line;
+    text-align: center;
   }
   .back__anchor {
     font-size: 16px;

@@ -38,7 +38,7 @@ function Form() {
   );
 }
 
-function Community_post_form() {
+function Community_post_edit() {
   return (
     <div>
       <Header title="글 등록" />
@@ -48,4 +48,4 @@ function Community_post_form() {
   );
 }
 
-export default Community_post_form;
+export default Community_post_edit;

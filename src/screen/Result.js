@@ -14,11 +14,11 @@ class Donut extends Component {
     this.state = {
       options: {
         labels: [
-          "검거세미밤나방",
-          "담배거세미나방",
-          "담배나방",
-          "도둑나방",
-          "기타",
+          props.label1,
+          props.label2,
+          props.label3,
+          props.label4,
+          props.label5,
         ],
         dataLabels: { style: { fontSize: "20px" } },
         legend: {
@@ -32,7 +32,13 @@ class Donut extends Component {
           position: "right",
         },
       },
-      series: [92, 3, 3, 1, 1],
+      series: [
+        Number(props.percent1),
+        Number(props.percent2),
+        Number(props.percent3),
+        Number(props.percent4),
+        Number(props.percent5),
+      ],
     };
   }
   render() {
@@ -62,7 +68,21 @@ function MainBlock() {
         <img className={styles.resultImg} src={resultImg} alt="" />
       </div>
       <div className={styles.chartDiv}>
-        <Donut width="600" className={styles.chart} />
+        {/* 진단 결과 관련 정보 확률 높은 순*/}
+        <Donut
+          width="600"
+          className={styles.chart}
+          label1="검거세미밤나방"
+          label2="담배거세미나방"
+          label3="담배나방"
+          label4="도둑나방"
+          label5="기타"
+          percent1="92.5"
+          percent2="3"
+          percent3="2.5"
+          percent4="1"
+          percent5="1"
+        />
       </div>
       <div className={styles.btnsContainer}>
         <Link to="/insectinfo">
