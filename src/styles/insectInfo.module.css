@@ -1,18 +1,18 @@
 @import "./variable.css";
 
 @media screen and (max-width: 767px) {
-  .main__container {
+  .mainContainer {
     flex-direction: column;
   }
-  .main__information p {
+  .mainInformation p {
     line-height: 1.7;
     font-size: 18px;
   }
-  .imgs__container {
+  .imgsContainer {
     width: 90vw;
     height: 45vh;
   }
-  .element__imgBlock {
+  .elementImgBlock {
     width: 100%;
     height: 40vh;
     display: flex;
@@ -20,7 +20,7 @@
     align-items: center;
     box-sizing: border-box;
   }
-  .element__imgBlock img {
+  .elementImgBlock img {
     width: 90%;
     height: 35vh;
     border-radius: 10px;
@@ -37,21 +37,21 @@
     font-size: 20px;
     border-radius: 5px;
   }
-  .main__information {
+  .mainInformation {
     width: 100%;
     padding: 2vw;
   }
 }
 @media screen and (min-width: 768px) {
-  .main__information {
+  .mainInformation {
     width: 70vw;
   }
-  .main__information p {
+  .mainInformation p {
     line-height: 1.8;
     font-size: 22px;
     padding-right: 3vw;
   }
-  .imgs__container {
+  .imgsContainer {
     width: 35vw;
   }
   .btnsContainer button {
@@ -65,10 +65,10 @@
     box-sizing: border-box;
     padding: 0 3vw;
   }
-  .main__container {
+  .mainContainer {
     height: 70vh;
   }
-  .element__imgBlock img {
+  .elementImgBlock img {
     width: 80%;
     height: 50vh;
     margin: 3vh;
@@ -76,17 +76,17 @@
   }
 }
 
-.main__container {
+.mainContainer {
   width: 100%;
   display: flex;
 }
 
-.element__imgBlock {
+.elementImgBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.main__information {
+.mainInformation {
   font-weight: 500;
   padding-top: 2vh;
   box-sizing: border-box;

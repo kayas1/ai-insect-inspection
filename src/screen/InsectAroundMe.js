@@ -1,36 +1,69 @@
-import Header from "../component/Header";
-import Footer from "../component/Footer";
-import styles from "../styles/insectAroundme.module.css";
+import { useEffect, useState } from "react";
 import {
+  InfoWindow,
   Container as MapDiv,
   Marker,
   NaverMap,
   NavermapsProvider,
   useNavermaps,
-  InfoWindow,
 } from "react-naver-maps";
-import { useState } from "react";
-import { useEffect } from "react";
+import Footer from "../component/Footer";
+import Header from "../component/Header";
+import styles from "../styles/insectAroundme.module.css";
 function MyMap() {
   const navermaps = useNavermaps();
 
   const [map, setMap] = useState(null);
   const [infowindow, setInfoWindow] = useState(null);
-
+  const [markerData, setMarkerData] = useState([]);
+  const insectName = [
+    "정상",
+    "검거세미밤나방",
+    "꽃노랑총채벌레",
+    "담배가루이",
+    "담배거세미나방",
+    "담배나방",
+    "도둑나방",
+    "먹노린재",
+    "목화바둑명나방",
+    "무잎벌",
+    "배추좀나방",
+    "배추흰나비",
+    "벼룩잎벌레",
+    null,
+    "복숭아혹진딧물",
+    " 비단노린재",
+    "썩덩나무노린재",
+    "알락수염노린재",
+    "열대거세미나방",
+    "큰28점박이 무당벌레",
+    "톱다리개미허리노린재",
+    "파밤나방",
+  ];
   const markers = [
     {
       id: 1,
       position: { lat: 37.55, lng: 127.07 },
-      insectName: "검거세미밤나방",
       date: "00월 0일",
-    },
-    {
-      id: 2,
-      position: { lat: 37.5, lng: 127 },
-      insectName: "밤나방",
-      date: "00월 0일",
+      insectCode: 19,
     },
   ];
+  useEffect(() => {
+    const loadMarkerData = async () => {
+      try {
+        const response = await fetch(`/insectAroundMe`);
+        if (!response.ok) {
+          throw new Error();
+        }
+        const data = await response.json();
+        setMarkerData(data);
+        console.log(markerData);
+      } catch (e) {
+        console.log("에러");
+      }
+    };
+    loadMarkerData();
+  }, []);
 
   function onSuccessGeolocation(position) {
     if (!map || !infowindow) return;
@@ -91,20 +124,19 @@ function MyMap() {
     } else {
       var center = map.getCenter();
       infowindow.setContent(
-        '<div style="padding:20px;"><h5 style="margin-bottom:5px;color:#f00;">Geolocation not supported</h5></div>'
+        `<div style="padding:20px;"><h5 style="margin-bottom:5px;color:#f00;">Geolocation not supported</div>`
       );
       infowindow.open(map, center);
     }
   }, [map, infowindow]);
   return (
     <NaverMap
-      // uncontrolled
       defaultCenter={new navermaps.LatLng(37.5666805, 126.9784147)}
       defaultZoom={10}
       defaultMapTypeId={navermaps.MapTypeId.NORMAL}
       ref={setMap}
     >
-      {markers.map((marker) => (
+      {markerData.map((marker) => (
         <Marker
           key={marker.id}
           position={marker.position}
@@ -112,10 +144,12 @@ function MyMap() {
             infowindow.setContent(
               '<div style="padding:20px; line-height:1.5">' +
                 "해충 명: " +
-                marker.insectName +
+                insectName[marker.insectCode] +
                 "<br/>" +
                 "해충 발생 날짜: " +
                 marker.date +
+                "<br/>" +
+                `<a href=/insectinfo?insectCode=${marker.insectCode} >해충 상세 정보 확인</a>` +
                 "</div>"
             );
             infowindow.open(
@@ -153,7 +187,7 @@ function Map() {
 function InsectAroundMe() {
   return (
     <div>
-      <Header title="주변 해충 정보" />
+      <Header title="내 주변 해충 정보" />
       <Map />
       <Footer />
     </div>

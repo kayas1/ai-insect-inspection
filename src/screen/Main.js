@@ -14,7 +14,10 @@ function Main() {
           </Link>
         </div>
         <div className={styles.btnContainer}>
-          <Link className={styles.anchor__conatiner} to={`/community`}>
+          <Link
+            className={styles.anchor__conatiner}
+            to={`/community-post-list`}
+          >
             <button className={styles.main__btn}>커뮤니티</button>
           </Link>
         </div>
