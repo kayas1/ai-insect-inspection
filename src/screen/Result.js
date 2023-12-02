@@ -258,13 +258,6 @@ function ResultScreen() {
           >
             <button className={styles.moreInfoBtn}>해충 상세 정보</button>
           </Link>
-          <Link
-            to={`/insectcm?insectCode=${
-              v[1] > 42 ? v[1] - 42 : v[1] > 21 ? v[1] - 21 : v[1]
-            }`}
-          >
-            <button className={styles.moreInfoBtn}>해충 방제법</button>
-          </Link>
         </div>
       </div>
       <Footer />

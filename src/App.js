@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./screen/Main.js";
 import ResultScreen from "./screen/Result.js";
 import DiagnosisScreen from "./screen/Diagnosis.js";

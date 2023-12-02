@@ -40,14 +40,6 @@ function MyMap() {
     "톱다리개미허리노린재",
     "파밤나방",
   ];
-  const markers = [
-    {
-      id: 1,
-      position: { lat: 37.55, lng: 127.07 },
-      date: "00월 0일",
-      insectCode: 19,
-    },
-  ];
   useEffect(() => {
     const loadMarkerData = async () => {
       try {
