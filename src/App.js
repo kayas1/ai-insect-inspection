@@ -8,6 +8,7 @@ import InsectAroundMe from "./screen/InsectAroundMe.js";
 import Community_post_form from "./screen/Community_post_form.js";
 import CommunityContext from "./screen/Community-post-detail.js";
 import Community_post_edit from "./screen/Community_post_edit.js";
+import InsectInfoList from "./screen/InsectInfoList.js";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           element={<Community_post_edit />}
         />
         <Route path="/community-post/:id" element={<CommunityContext />} />
+        <Route path="/insectinfolist" element={<InsectInfoList />} />
         <Route path="/insectinfo" element={<InsectInfo />} />
         <Route path="/insectaroundme" element={<InsectAroundMe />} />
       </Routes>

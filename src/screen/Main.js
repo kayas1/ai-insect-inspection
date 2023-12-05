@@ -6,29 +6,31 @@ import Footer from "../component/Footer";
 
 function Main() {
   return (
-    <div className={styles.main__block}>
-      <div className={styles.main__btnsContainer}>
+    <div className={styles.mainBlock}>
+      <div className={styles.mainBtnsContainer}>
         <div className={styles.btnContainer}>
-          <Link className={styles.anchor__conatiner} to={`/diagnosis`}>
-            <button className={styles.main__btn}>해충 진단</button>
+          <Link className={styles.anchorConatiner} to={`/diagnosis`}>
+            <button className={styles.mainBtn}>해충 진단</button>
           </Link>
         </div>
         <div className={styles.btnContainer}>
-          <Link
-            className={styles.anchor__conatiner}
-            to={`/community-post-list`}
-          >
-            <button className={styles.main__btn}>커뮤니티</button>
+          <Link className={styles.anchorConatiner} to={`/community-post-list`}>
+            <button className={styles.mainBtn}>커뮤니티</button>
           </Link>
         </div>
         <div className={styles.btnContainer}>
-          <Link className={styles.anchor__conatiner} to={`/insectaroundme`}>
-            <button className={styles.main__btn}>내 주변 해충 정보</button>
+          <Link className={styles.anchorConatiner} to={`/insectaroundme`}>
+            <button className={styles.mainBtn}>내 주변 해충 정보</button>
+          </Link>
+        </div>
+        <div className={styles.btnContainer}>
+          <Link className={styles.anchorConatiner} to={"/insectinfolist"}>
+            <button className={styles.mainBtn}>해충 상세정보 바로가기</button>
           </Link>
         </div>
       </div>
-      <div className={styles.tutorial__vidContainer}>
-        <video controls className={styles.tutorial__vid} src={null} />
+      <div className={styles.tutorialVidContainer}>
+        <video controls className={styles.tutorialVid} src={null} />
       </div>
     </div>
   );

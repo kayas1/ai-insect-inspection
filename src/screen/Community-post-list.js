@@ -22,35 +22,6 @@ function Post() {
   );
 }
 
-const defaultData = [
-  { id: "1", subject: "sample", createDate: "00:00:00" },
-  { id: "2", subject: "sample", createDate: "00:00:00" },
-  { id: "3", subject: "sample", createDate: "00:00:00" },
-  { id: "4", subject: "sample", createDate: "00:00:00" },
-  { id: "5", subject: "sample", createDate: "00:00:00" },
-  { id: "6", subject: "sample", createDate: "00:00:00" },
-  { id: "7", subject: "sample", createDate: "00:00:00" },
-  { id: "8", subject: "sample", createDate: "00:00:00" },
-  { id: "9", subject: "sample", createDate: "00:00:00" },
-  { id: "10", subject: "sample", createDate: "00:00:00" },
-  { id: "11", subject: "sample", createDate: "00:00:00" },
-  { id: "12", subject: "sample", createDate: "00:00:00" },
-  { id: "13", subject: "sample", createDate: "00:00:00" },
-  { id: "14", subject: "sample", createDate: "00:00:00" },
-  { id: "15", subject: "sample", createDate: "00:00:00" },
-  { id: "16", subject: "sample", createDate: "00:00:00" },
-  { id: "17", subject: "sample", createDate: "00:00:00" },
-  { id: "18", subject: "sample", createDate: "00:00:00" },
-  { id: "19", subject: "sample", createDate: "00:00:00" },
-  { id: "20", subject: "sample", createDate: "00:00:00" },
-  { id: "21", subject: "sample", createDate: "00:00:00" },
-  { id: "22", subject: "sample", createDate: "00:00:00" },
-  { id: "23", subject: "sample", createDate: "00:00:00" },
-  { id: "24", subject: "sample", createDate: "00:00:00" },
-  { id: "25", subject: "sample", createDate: "00:00:00" },
-  { id: "26", subject: "sample", createDate: "00:00:00" },
-];
-
 const columnHelper = createColumnHelper();
 
 const columns = [
@@ -69,24 +40,95 @@ const columns = [
 ];
 
 function CommunityTable() {
-  const [data, setData] = React.useState(() => [...defaultData]);
+  function SearchBar() {
+    const handleSearchClick = (e) => {
+      e.preventDefault();
+      const keyword = document.body.querySelector("#keyword");
+      const searchOption = document.body.querySelector("#searchOption");
+      console.log(searchOption.value);
 
+      const search = async (keywordValue, searchOptionValue) => {
+        const formData = new FormData();
+        formData.append("keyword", keywordValue);
+        formData.append("searchOption", searchOptionValue);
+        try {
+          const response = await fetch("/community_post/search", {
+            method: "POST",
+            body: formData,
+          });
+          if (!response.ok) {
+            throw new Error();
+          }
+          const tmpData = await response.json();
+          setData(tmpData);
+        } catch (e) {}
+      };
+      search(keyword.value, searchOption.value);
+    };
+
+    return (
+      <form className={styles.searchBar}>
+        <div className={styles.searchBargrid1}>
+          <label htmlFor="keyword"> 검색어: </label>
+          <input
+            id="keyword"
+            name="keyword"
+            type="text"
+            placeholder="검색어를 입력하세요"
+          />
+        </div>
+        <div className={styles.searchBargrid2}>
+          <label htmlFor="searchOption">검색 옵션: </label>
+          <select id="searchOption" name="searchOption">
+            <option value="title">제목</option>
+            <option value="titleAndContent">제목과 내용</option>
+          </select>
+        </div>
+        <div className={styles.searchBargrid3}>
+          <button onClick={handleSearchClick}>
+            <i className="fa-solid fa-magnifying-glass" />
+          </button>
+        </div>
+      </form>
+    );
+  }
+  const [data, setData] = React.useState([]);
+  React.useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetch("/community_post/list");
+        if (!response.ok) {
+          alert("오류가 발생했습니다");
+        }
+        console.log(response);
+        const tmpData = await response.json();
+        console.log(tmpData);
+        setData(tmpData);
+      } catch (e) {
+        const a = document.createElement("a");
+        a.href = "/";
+        document.body.appendChild(a);
+        a.click();
+      }
+    };
+    loadData();
+  }, []);
   const table = useReactTable({
     data,
     columns,
-    getCoreRowModel: getCoreRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
   const handleRowClick = (id) => {
     const a = document.createElement("a");
-    a.href = `community/${id}`;
+    a.href = `community-post/${id}`;
     document.body.appendChild(a);
     a.click();
   };
 
   return (
     <div>
+      <SearchBar />
       <table>
         <thead className={styles.tableHeader}>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -169,71 +211,14 @@ function CommunityTable() {
     </div>
   );
 }
-function SearchBar({ handleSearch }) {
-  const [searchTerm, setSearchTerm] = React.useState("");
 
-  const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearchClick = () => {
-    handleSearch(searchTerm); // 검색어를 부모 컴포넌트로 전달
-  };
-
-  return (
-    <form className={styles.searchBar}>
-      <div className={styles.searchBargrid1}>
-        <label htmlFor="keyword"> 검색어: </label>
-        <input
-          id="keyword"
-          name="keyword"
-          type="text"
-          value={searchTerm}
-          onChange={handleInputChange}
-          placeholder="검색어를 입력하세요"
-        />
-      </div>
-      <div className={styles.searchBargrid2}>
-        <label htmlFor="searchOption">검색 옵션: </label>
-        <select id="searchOption" name="searchOption">
-          <option value="title">제목</option>
-          <option value="titleAndContent">제목과 내용</option>
-        </select>
-      </div>
-      <div className={styles.searchBargrid3}>
-        <button onClick={handleSearchClick}>
-          <i className="fa-solid fa-magnifying-glass" />
-        </button>
-      </div>
-    </form>
-  );
-}
 function CommunityScreen() {
-  const data = [
-    { id: 1, num: 1, title: "제목 1", createDate: "2023-11-10" },
-    { id: 2, num: 2, title: "제목 2", createDate: "2023-11-09" },
-    { id: 3, num: 3, title: "제목 3", createDate: "2023-11-08" },
-  ];
-
-  const columns = [
-    { Header: "번호", accessor: "num" },
-    { Header: "제목", accessor: "title" },
-    { Header: "작성일", accessor: "createDate" },
-  ];
-
-  const handleSearch = (searchTerm) => {
-    // 여기에서 검색어에 따라 데이터를 필터링하거나 검색 기능 구현
-    // 필터링된 데이터를 사용하여 커뮤니티 테이블을 업데이트할 수 있습니다.
-    // 예: setData(filteredData);
-    console.log("검색어:", searchTerm);
-  };
   return (
     <div>
       <Header title="커뮤니티" />
       <div className={styles.communityContainer}>
         <Post />
-        <SearchBar handleSearch={handleSearch} /> {/* 검색 창 추가 */}
-        <CommunityTable data={data} columns={columns} />
+        <CommunityTable />
       </div>
       <Footer />
     </div>

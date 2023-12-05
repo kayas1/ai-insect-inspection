@@ -65,7 +65,6 @@ function ResultScreen() {
   const search = window.location.search;
   const v = new Array(6);
   const p = new Array(6);
-  let tmp;
   const params = new URLSearchParams(search);
   const insectName = [
     "정상",

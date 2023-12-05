@@ -159,7 +159,7 @@ function Map() {
   const apikey = process.env.REACT_APP_MAP_CLIENT_ID;
 
   return (
-    <div className={styles.map__loader}>
+    <div className={styles.mapLoader}>
       <div className="map">
         <NavermapsProvider ncpClientId={apikey}>
           <MapDiv

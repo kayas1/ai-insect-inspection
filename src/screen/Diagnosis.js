@@ -102,9 +102,6 @@ function SubmitForm() {
     }
     const formData = new FormData();
     formData.append("imageFile", imageFile);
-    // formData.append("agricultureType", agricultureType);
-    // formData.append("lat", currentPosition[0]); //전달 할 값 객체에 이미지파일, 작물 타입, 사용자의 위도, 경도
-    // formData.append("lng", currentPosition[1]);
     const options = {
       method: "post",
       body: formData,
@@ -116,24 +113,23 @@ function SubmitForm() {
       const response = await fetch(
         `/diagnosis?agricultureType=${agricultureType}&lat=${currentPosition[0]}&lng=${currentPosition[1]}`,
         options
-      ); //여기 함수 내에 url 값을 엔드포인트 url로 바꾸고 실행하면 이론상 통신 가능
+      );
       if (!response.ok) {
         console.log(response);
         throw new Error();
       }
       const data = await response.json();
       console.log(data);
-      //응답 값에 v1 v2 v3 v4 v5 를 해충명 확률 높은거부터, p1 p2 p3 p4 p5에 확률 높은거부터 확률 담아주셈
       const a = document.createElement("a");
       a.href = `/result?v1=${data.v1}&v2=${data.v2}&v3=${data.v3}&v4=${data.v4}&v5=${data.v5}&p1=${data.p1}&p2=${data.p2}&p3=${data.p3}&p4=${data.p4}&p5=${data.p5}`;
       document.body.appendChild(a);
       a.click();
     } catch (e) {
-      // alert("오류가 발생하였습니다");
-      // const a = document.createElement("a");
-      // a.href = "/diagnosis";
-      // document.body.appendChild(a);
-      // a.click();
+      alert("오류가 발생하였습니다");
+      const a = document.createElement("a");
+      a.href = "/diagnosis";
+      document.body.appendChild(a);
+      a.click();
     }
   }
   return (
