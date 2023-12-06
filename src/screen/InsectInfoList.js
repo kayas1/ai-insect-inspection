@@ -20,7 +20,7 @@ const columns = [
     cell: (info) => info.renderValue(),
   }),
   columnHelper.accessor("subject", {
-    header: () => "제목",
+    header: () => "해충명",
     cell: (info) => info.renderValue(),
   }),
 ];
@@ -30,26 +30,23 @@ function CommunityTable() {
     const handleSearchClick = (e) => {
       e.preventDefault();
       const keyword = document.body.querySelector("#keyword");
-      const searchOption = document.body.querySelector("#searchOption");
-      console.log(searchOption.value);
 
-      const search = async (keywordValue, searchOptionValue) => {
+      const search = async (keywordValue) => {
         const formData = new FormData();
         formData.append("keyword", keywordValue);
-        formData.append("searchOption", searchOptionValue);
-        try {
-          const response = await fetch("/community_post/search", {
-            method: "POST",
-            body: formData,
-          });
-          if (!response.ok) {
-            throw new Error();
-          }
-          const tmpData = await response.json();
-          setData(tmpData);
-        } catch (e) {}
+        // try {
+        //   const response = await fetch("/community_post/search", {
+        //     method: "POST",
+        //     body: formData,
+        //   });
+        //   if (!response.ok) {
+        //     throw new Error();
+        //   }
+        //   const tmpData = await response.json();
+        //   setData(tmpData);
+        // } catch (e) {}
       };
-      search(keyword.value, searchOption.value);
+      search(keyword.value);
     };
 
     return (
@@ -62,13 +59,6 @@ function CommunityTable() {
             type="text"
             placeholder="검색어를 입력하세요"
           />
-        </div>
-        <div className={styles.searchBargrid2}>
-          <label htmlFor="searchOption">검색 옵션: </label>
-          <select id="searchOption" name="searchOption">
-            <option value="title">제목</option>
-            <option value="titleAndContent">제목과 내용</option>
-          </select>
         </div>
         <div className={styles.searchBargrid3}>
           <button onClick={handleSearchClick}>
@@ -188,7 +178,7 @@ function CommunityTable() {
 function InsectInfoList() {
   return (
     <div>
-      <Header title="커뮤니티" />
+      <Header title="해충 데이터 베이스" />
       <div className={styles.communityContainer}>
         <CommunityTable />
       </div>

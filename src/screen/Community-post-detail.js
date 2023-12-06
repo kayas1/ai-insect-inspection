@@ -19,7 +19,19 @@ function CommunityContext() {
         }
         const data = await response.json();
         setSubject(data.subject);
-        setCreateDate(data.createDate);
+        const rawDate = new Date(data.createDate);
+
+        const formattedDate = new Date(rawDate).toLocaleString("ko-KR", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          hour12: false,
+        });
+
+        setCreateDate(formattedDate);
         setContent(data.content);
         setModifyDate(data.modifiedDate);
       } catch (e) {}
@@ -87,11 +99,22 @@ function CommunityContext() {
     );
   }
   function CommentItem({ commentText, commentCreatedDate }) {
+    const rawDate = new Date(commentCreatedDate);
+
+    const formattedDate = new Date(rawDate).toLocaleString("ko-KR", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      hour12: false,
+    });
     return (
       <li className={styles.commentContainer}>
         <div>{commentText}</div>
         <div>
-          <div>{commentCreatedDate} </div>
+          <div>{formattedDate} </div>
         </div>
       </li>
     );

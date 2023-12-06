@@ -35,7 +35,29 @@ const columns = [
   }),
   columnHelper.accessor("createDate", {
     header: () => "날짜",
-    cell: (info) => info.renderValue(),
+    cell: (info) => {
+      const rawDate = new Date(info.row.original.createDate);
+      const currentDate = new Date();
+      const differenceInTime = Math.abs(
+        currentDate.getTime() - rawDate.getTime()
+      );
+      const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+      let formattedDate;
+      if (differenceInDays < 1) {
+        formattedDate = new Date(rawDate).toLocaleString("ko-KR", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: false,
+        });
+      } else {
+        formattedDate = new Date(rawDate).toLocaleString("ko-KR", {
+          month: "numeric",
+          day: "numeric",
+        });
+      }
+
+      return formattedDate;
+    },
   }),
 ];
 

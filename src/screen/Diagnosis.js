@@ -105,9 +105,6 @@ function SubmitForm() {
     const options = {
       method: "post",
       body: formData,
-      // headers: {
-      //   "Content-Type": "multipart/form-data",
-      // },
     };
     try {
       const response = await fetch(
@@ -125,11 +122,11 @@ function SubmitForm() {
       document.body.appendChild(a);
       a.click();
     } catch (e) {
-      alert("오류가 발생하였습니다");
-      const a = document.createElement("a");
-      a.href = "/diagnosis";
-      document.body.appendChild(a);
-      a.click();
+      // alert("오류가 발생하였습니다");
+      // const a = document.createElement("a");
+      // a.href = "/diagnosis";
+      // document.body.appendChild(a);
+      // a.click();
     }
   }
   return (

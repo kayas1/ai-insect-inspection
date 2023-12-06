@@ -156,7 +156,7 @@ function MyMap() {
   );
 }
 function Map() {
-  const apikey = process.env.REACT_APP_MAP_CLIENT_ID;
+  const apikey = "pukd94osph";
 
   return (
     <div className={styles.mapLoader}>
