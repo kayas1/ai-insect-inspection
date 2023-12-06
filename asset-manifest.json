@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ai-insect-inspection/static/css/main.ad3f319c.css",
-    "main.js": "/ai-insect-inspection/static/js/main.0952d1fd.js",
+    "main.js": "/ai-insect-inspection/static/js/main.9d9bf59a.js",
     "index.html": "/ai-insect-inspection/index.html",
     "main.ad3f319c.css.map": "/ai-insect-inspection/static/css/main.ad3f319c.css.map",
-    "main.0952d1fd.js.map": "/ai-insect-inspection/static/js/main.0952d1fd.js.map"
+    "main.9d9bf59a.js.map": "/ai-insect-inspection/static/js/main.9d9bf59a.js.map"
   },
   "entrypoints": [
     "static/css/main.ad3f319c.css",
-    "static/js/main.0952d1fd.js"
+    "static/js/main.9d9bf59a.js"
   ]
 }
