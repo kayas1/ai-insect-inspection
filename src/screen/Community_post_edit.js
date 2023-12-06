@@ -8,7 +8,6 @@ function Form() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { id } = useParams();
-  console.log(id);
   useEffect(() => {
     const loadData = async () => {
       try {

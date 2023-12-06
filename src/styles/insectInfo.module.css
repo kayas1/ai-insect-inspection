@@ -41,11 +41,12 @@
     width: 100%;
     padding: 2vw;
   }
+  .semiTitle {
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
 @media screen and (min-width: 768px) {
-  .mainInformation {
-    width: 70vw;
-  }
   .mainInformation p {
     line-height: 1.8;
     font-size: 22px;
@@ -65,14 +66,15 @@
     box-sizing: border-box;
     padding: 0 3vw;
   }
-  .mainContainer {
-    height: 70vh;
-  }
   .elementImgBlock img {
     width: 80%;
     height: 50vh;
     margin: 3vh;
     border-radius: 10px;
+  }
+  .semiTitle {
+    font-size: 26px;
+    font-weight: 550;
   }
 }
 

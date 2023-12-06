@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.tempContainer}>
-        <span className={styles.number}> 연락처 : 010-2684-1833</span>
+        <span className={styles.number}> 문의 : 010-2684-1833</span>
       </div>
     </div>
   );

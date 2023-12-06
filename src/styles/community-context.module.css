@@ -29,10 +29,11 @@
     font-size: 14px;
     opacity: 0.85;
   }
-  .noneTitleDiv input[type="submit"] {
+  .noneTitleDiv button {
     background-color: white;
     border-radius: 5px;
     margin: 0 0.5vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
   }
   .contextContainer {
     padding-left: 2vw;
@@ -117,14 +118,16 @@
     margin: 0.3vh;
   }
   .noneTitleDiv input {
-    font-size: 22px;
-    margin-right: 0.5vw;
+    font-size: 14px;
+    width: 13vw;
+    height: 3vh;
+    margin: 0 0.5vw;
   }
-  .noneTitleDiv input[type="submit"] {
+  .noneTitleDiv button {
     font-size: 20px;
     background-color: white;
     border-radius: 5px;
-    margin: 0 0.1vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
   }
   .contextContainer {
     width: 100vw;

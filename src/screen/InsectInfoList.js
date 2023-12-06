@@ -34,19 +34,19 @@ function CommunityTable() {
       const search = async (keywordValue) => {
         const formData = new FormData();
         formData.append("keyword", keywordValue);
-        // try {
-        //   const response = await fetch("/community_post/search", {
-        //     method: "POST",
-        //     body: formData,
-        //   });
-        //   if (!response.ok) {
-        //     throw new Error();
-        //   }
-        //   const tmpData = await response.json();
-        //   setData(tmpData);
-        // } catch (e) {}
+        try {
+          const response = await fetch("/baseUrl", {
+            method: "POST",
+            body: formData,
+          });
+          if (!response.ok) {
+            throw new Error();
+          }
+          const jsonData = await response.json();
+          setData(jsonData);
+        } catch (e) {}
       };
-      search(keyword.value);
+      //  search(keyword.value);
     };
 
     return (
@@ -72,6 +72,15 @@ function CommunityTable() {
   React.useEffect(() => {
     const loadData = async () => {
       try {
+        const loadData = async () => {
+          const response = await fetch("baseurl");
+          if (!response.ok) {
+            throw new Error();
+          }
+          const jsonData = await response.json();
+          setData(jsonData);
+        };
+        //loadData();
       } catch (e) {}
     };
     loadData();

@@ -86,12 +86,12 @@ function InsectInfo() {
         </div>
         <ul className={styles.mainInformation}>
           <li>
-            <h2>해충 상세정보</h2>
+            <h2 className={styles.semiTitle}>해충 상세정보</h2>
             <p>{insectInfoText}</p>
           </li>
           <br />
           <li>
-            <h2>해충 방제법</h2>
+            <h2 className={styles.semiTitle}>해충 방제법</h2>
             <p>{insectCM}</p>
           </li>
         </ul>

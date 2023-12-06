@@ -8,6 +8,7 @@ function CommunityContext() {
   const [subject, setSubject] = useState("");
   const [createDate, setCreateDate] = useState("");
   const { id } = useParams();
+  console.log(id);
   const [content, setContent] = useState("");
   const [modifyDate, setModifyDate] = useState("");
   useEffect(() => {
@@ -42,7 +43,7 @@ function CommunityContext() {
     const handleEditBtnClick = async (e) => {
       e.preventDefault();
       const a = document.createElement("a");
-      a.href = `/community-post/edit/id=${id}`;
+      a.href = `/community-post/edit/${id}`;
       document.body.appendChild(a);
       a.click();
     };
@@ -76,15 +77,15 @@ function CommunityContext() {
             <div>{modifyDate ? modifyDate : createDate}</div>
           </div>
           <form id="buttonForm">
+            <button onClick={handleEditBtnClick}>편집</button>
             <input
               name="password"
               id="password"
               type="password"
               required
-              placeholder="비밀번호를 입력하세요"
+              placeholder="삭제를 하시려면 비밀번호를 입력하세요"
             />
 
-            <button onClick={handleEditBtnClick}>편집</button>
             <button onClick={handleDeleteBtnClick}>게시글 삭제</button>
           </form>
         </div>
