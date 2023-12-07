@@ -135,14 +135,12 @@ function SubmitForm() {
         {changeCamera ? null : (
           <div className={styles.explainContainer}>
             <h1>
-              이미지파일을 선택하시거나 <br />
-              카메라 열기를 눌러 사진 촬영 후 선택하여 <br />
+              이미지파일을 선택하신 후 <br />
               작물 종류를 선택하고 제출해주세요
               <br />그 후 잠시만 기다려주세요
             </h1>
           </div>
         )}
-        <CameraComponent />
         {isHidden ? null : (
           <div className={styles.submitFileContainer}>
             <input

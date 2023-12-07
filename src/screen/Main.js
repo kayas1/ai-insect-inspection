@@ -23,11 +23,6 @@ function Main() {
             <button className={styles.mainBtn}>내 주변 해충 정보</button>
           </Link>
         </div>
-        <div className={styles.btnContainer}>
-          <Link className={styles.anchorConatiner} to={"/insectinfolist"}>
-            <button className={styles.mainBtn}>해충 상세정보 바로가기</button>
-          </Link>
-        </div>
       </div>
       <div className={styles.tutorialVidContainer}>
         <video controls className={styles.tutorialVid} src={null} />
